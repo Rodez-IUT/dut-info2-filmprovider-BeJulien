@@ -1,0 +1,24 @@
+<!ELEMENT librairie (entete, livre+)>
+
+<!ELEMENT entete (%texte_mele;)>
+<!ELEMENT strong (#PCDATA)>
+<!ELEMENT em (#PCDATA)>
+<!ELEMENT img EMPTY>
+<!ATTLIST img src   CDATA #REQUIRED
+              title CDATA #IMPLIED
+>
+
+<!ELEMENT livre (titre, auteur+, description, prix)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteur ((nom, prenom?)|())>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT description (%texte_mele;)>
+<!ELEMENT prix (valeur, devise, type)>
+<!ATTLIST prix tva CDATA "5.5">
+<!ELEMENT valeur (#PCDATA)>
+<!-- TODO -->
+
+<!ENTITY % texte_mele SYSTEM (#PCDATA | strong | em | img)*>
+<!ENTITY % personne SYSTEM (nom, prenom?)>
+<!ENTITY copyright "&#xA9;Librairie & Internet 2020">
