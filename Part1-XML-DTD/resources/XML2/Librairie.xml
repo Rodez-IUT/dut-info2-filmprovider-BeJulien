@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE librairie SYSTEM "Librairie.dtd">
 <librairie>
-
+    <entete>
+        Ceci est <strong>l'entête</strong> de la librairie
+        <em>Bienvenue</em>
+        <img src="./src/img_entete.jpg" />
+        &copyright;
+    </entete>
+    <livre isbn="717871818191989824">
+        <titre>Le jardinage</titre>
+        <auteurs>
+            <collectif>
+                <direction>
+                    <auteur>
+                        <nom>Paza</nom>
+                        <prenom>Kevin</prenom>
+                    </auteur>
+                </direction>
+                <membres>
+                    1. Jean Poireau
+                    2. Pierre Delaroche
+                    3. Hercule Sans
+                </membres>
+            </collectif>
+        </auteurs>
+        <description>Le premier livre qui parle pleinement de jardinage grandeur nature.</description>
+        <prix valeur="12" />
+    </livre>
+    <livre isbn="187878787879-5555">
+        <titre>La route du sud</titre>
+        <auteurs>
+            <auteur>
+                <nom>Lafontaine</nom>
+                <prenom>Jean</prenom>
+            </auteur>
+            <auteur>
+                <nom>Hugo</nom>
+                <prenom>Victor</prenom>
+            </auteur>
+        </auteurs>
+        <description>Un livre qui parle de la route du sud.</description>
+        <prix valeur="51" devise="livre" />
+    </livre>
 </librairie>
