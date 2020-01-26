@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE librairie SYSTEM "Librairie.dtd">
 <librairie>
-    <entete>
-        Ceci est <strong>l'entête</strong> de la librairie
-        <em>Bienvenue</em>
-        <img src="./src/img_entete.jpg" />
-        &copyright;
-    </entete>
-    <livre isbn="717871818191989824">
+    <entete>Ceci est l'entête de la librairie</entete>
+    <livre isbn="27877877979-5487">
         <titre>Le jardinage</titre>
+        <auteurs>
+            <auteur>
+                <nom>Dujardin</nom>
+                <prenom>Jean</prenom>
+            </auteur>
+            <auteur>
+                <nom>Dupond</nom>
+            </auteur>
+            <auteur>
+                <nom>Francis</nom>
+                <prenom>Delamote</prenom>
+            </auteur>
+        </auteurs>
+        <description>Le premier livre qui parle vraiment de jardinage</description>
+        <prix devise="euro" type="TCC">10</prix>
+    </livre>
+    <livre isbn="27717877979-5487">
+        <titre>Le grand tour du monde</titre>
         <auteurs>
             <collectif>
                 <direction>
                     <auteur>
-                        <nom>Paza</nom>
-                        <prenom>Kevin</prenom>
+                        <nom>Olivier</nom>
+                        <prenom>Laplace</prenom>
                     </auteur>
                 </direction>
                 <membres>
-                    1. Jean Poireau
-                    2. Pierre Delaroche
-                    3. Hercule Sans
+                    Patrice - Patricia
                 </membres>
             </collectif>
         </auteurs>
-        <description>Le premier livre qui parle pleinement de jardinage grandeur nature.</description>
-        <prix valeur="12" />
-    </livre>
-    <livre isbn="187878787879-5555">
-        <titre>La route du sud</titre>
-        <auteurs>
-            <auteur>
-                <nom>Lafontaine</nom>
-                <prenom>Jean</prenom>
-            </auteur>
-            <auteur>
-                <nom>Hugo</nom>
-                <prenom>Victor</prenom>
-            </auteur>
-        </auteurs>
-        <description>Un livre qui parle de la route du sud.</description>
-        <prix valeur="51" devise="livre" />
+        <description>Le tour du monde vu par Olivier</description>
+        <prix devise="livre" type="HT">21</prix>
     </livre>
 </librairie>
