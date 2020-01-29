@@ -3,6 +3,6 @@
 3. /films/realisateur[last()]/nom/text()
 4. /films/film[2]/titre/text()
 5. /films/film/resume/text[contains(text(), "mafia")]/text()
-6.
-7.
-8.
+6. /films/film/resume/image/ancestor::film/titre
+7. //film[@id_realisateur="real_01"]/@annee
+8. count(/films/film[@annee="2003"])
