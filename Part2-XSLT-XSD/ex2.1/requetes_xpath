@@ -1,0 +1,8 @@
+1. /films/film/titre
+2. /films/film[titre="Minority Report"]/resume/text
+3. /films/realisateur[last()]/nom
+4. /films/film[last()]/titre
+5.
+6.
+7.
+8.
