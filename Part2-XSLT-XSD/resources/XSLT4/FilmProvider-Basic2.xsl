@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:output method="html" />
     <xsl:template match="/films">
         <html>
             <head>
@@ -25,9 +26,13 @@
 
     <xsl:template match="film">
         <tr>
+            <xsl:variable name="id" select="attribute::id_realisateur" />
+
             <td><xsl:value-of select="titre" /></td>
             <td><xsl:value-of select="resume/text" /></td>
-            <td><xsl:value-of select="//realisateur[//film/@id_realisateur = @id_realisateur]" /></td>
+            <td>
+                <xsl:value-of select="/films/realisateur[@id_realisateur = $id]" />
+            </td>
         </tr>
     </xsl:template>
 </xsl:stylesheet>
