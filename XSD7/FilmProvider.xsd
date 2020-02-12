@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Films description part -->
+    <xs:element name="films">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="realisateur" maxOccurs="unbounded" />
+                <xs:element ref="film" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Author description part -->
+    <xs:element name="realisateur">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="prenom" type="xs:string" />
+                <xs:element name="nom" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="id_realisateur" type="id_real_type" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="id_real_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="real_[0-9]+" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Movie description part -->
+    <xs:element name="film">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titre" type="xs:string" />
+                <xs:element ref="resume" />
+            </xs:sequence>
+            <xs:attribute name="id_film" type="id_film_type" use="required"></xs:attribute>
+            <xs:attribute name="id_realisateur" type="id_real_type" use="required"></xs:attribute>
+            <xs:attribute name="annee" type="annee_type" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="annee_type">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1920" />
+            <xs:maxInclusive value="2006" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="id_film_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="film_[0-9]+" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Resume description part -->
+    <xs:element name="resume">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="image" minOccurs="0" />
+                <xs:element name="text" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Image description part -->
+    <xs:element name="image">
+        <xs:complexType>
+            <xs:attribute name="source" type="xs:string" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
