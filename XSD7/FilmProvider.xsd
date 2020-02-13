@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://formationxml/filmprovider"
+           xmlns:fx="http://formationxml/filmprovider"
+           elementFormDefault="qualified">
+    
     <!-- Films description part -->
     <xs:element name="films">
         <xs:complexType>
@@ -8,6 +12,14 @@
                 <xs:element ref="film" maxOccurs="unbounded" />
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="pkReal">
+            <xs:selector xpath="realisateur" />
+            <xs:field xpath="@id_realisateur" />
+        </xs:key>
+        <xs:keyref refer="pkReal" name="fkReal">
+            <xs:selector xpath="film" />
+            <xs:field xpath="@id_realisateur" />
+        </xs:keyref>
     </xs:element>
 
     <!-- Author description part -->
